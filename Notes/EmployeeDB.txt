@@ -1,0 +1,56 @@
+.parent-div{
+  width:90%;
+  height: 500px;
+  margin: 20px 0px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+border-width: 2px;
+border:black
+}
+
+forgot how to get the border
+border: 2px solid black; resolved through gpt
+
+Issue 2:-parent div not getting enough width
+
+        <div style={{
+            width:'100%',
+            height: '80vh',
+            display:'grid',
+          
+            justifyContent:"center",
+            alignItems:"center",
+     
+            
+        }}>
+          
+            
+            <div className='parent-div'>
+                <div className='child-div'>
+
+                </div>
+                <div className='child-div'>
+                     
+                </div>
+            </div>
+        </div>
+
+
+        .parent-div{
+  width:90%;
+  height: 500px;
+  margin: 20px 0px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+  border: 2px solid black;
+}
+
+
+solution:-
+gridTemplateColumns: '1fr' makes the grid column stretch to fill the full width of the container, so child elements 
+(like .parent-div) using % widths can expand properly. Without it, the grid may shrink to fit content.
+or just use display:flex instead of gridTemplateColumns: '1fr'
